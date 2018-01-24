@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Vue</title>
+</head>
+
+<body>
+    <div id="vue-app">
+        <h2>{{greet("welcome")}} {{name}}</h1>
+            <ul>
+                <li v-for='toDo in toDos'>
+                    <input type="text" v-model='toDo.description' v-if='notToggle' size="30">
+                    <h1>The task is to {{toDo.description}} &nbsp
+                        <span v-on:click='modifyUserChoice()'>
+                            <i class="fa fa-pencil"></i>
+                        </span>
+                    </h1>
+
+                </li>
+            </ul>
+            <section>
+                <input type="text" v-model='taskName' size="30">
+                <button class="button" type="button" v-on:click='addToDo()'> Add To Do</button>
+            </section>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
